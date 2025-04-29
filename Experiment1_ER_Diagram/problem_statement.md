@@ -73,7 +73,9 @@ No explicit attributes shown, represents the university’s ERP system.
 ...
 
 ## Extension (Prerequisite / Billing):
-- Explain how you modeled prerequisites or billing.
+   - Each course may have implicit prerequisites defined in its metadata (not shown explicitly in this diagram).
+   
+   - Students enrolling in courses assume they meet any prerequisites set by the college or department.
 
 ## Design Choices:
 - Entities:
