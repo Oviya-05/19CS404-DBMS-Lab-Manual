@@ -15,7 +15,8 @@ University
 The ER diagram models a university’s information system, focusing on students, their login credentials, course enrollments, college details, and ERP (Enterprise Resource Planning) integration.
 
 ## ER Diagram:
-![ER Diagram](er_diagram.png)
+![image](https://github.com/user-attachments/assets/efdd6f06-05df-48a8-95ab-ba6e94e8dc6e)
+
 
 ## Entities and Attributes:
 1. Student
