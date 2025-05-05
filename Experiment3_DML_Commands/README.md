@@ -49,15 +49,7 @@ SELECT column1, column2 FROM table_name WHERE condition;
 --
 write a SQL query to create a union of two queries that shows the customer id, cities, and ratings of all customers. Those with a rating of 300 or greater will have the words 'High Rating', while the others will have the words 'Low Rating'.
 
-customer table
-
-cid           name          type   notnull       dflt_value  pk
-------------  ------------  -----  ------------  ----------  ----------
-0             customer_id   int    0                         0
-1             cust_name     text   0                         0
-2             city          text   0                         0
-3             grade         int    0                         0
-4             salesman_id   int    0                         0
+![image](https://github.com/user-attachments/assets/bf8ff99f-71eb-4d40-84b4-e06a945d3b2a)
 
 ![image](https://github.com/user-attachments/assets/0b24b967-3272-42fe-bca6-571ffcb7f486)
 
@@ -147,11 +139,7 @@ Write a SQL query to calculate the discount amount for each product. Return prod
 
 Sample table: Products
 
-product_id | original_price | discount_percentage
-------------+----------------+---------------------
-101 | 50.00 | 0.10
-102 | 75.00 | 0.15
-103 | 100.00 | 0.20
+![image](https://github.com/user-attachments/assets/e4e775f2-63a0-4866-b520-0b0294f33519)
 
 ![image](https://github.com/user-attachments/assets/6fc16649-b558-4f32-b0ee-da66d64afc98)
 
@@ -177,18 +165,8 @@ Write a SQL query to retrieve all employee names in lower case.
 
 Table name: emp
 
-name        type
-----------  ----------
-empno       INT
-ename       VARCHAR(100)
-job         VARCHAR(50)
-mgr         INT
-hiredate    DATE
-sal         DECIMAL(10,2)
-comm        DECIMAL(10,2)
-deptno      INT
-
 ![image](https://github.com/user-attachments/assets/67ef02af-836e-4ebc-bcfa-a02549596343)
+![image](https://github.com/user-attachments/assets/f5b655a0-7e24-4cc2-8676-36f41db5e05c)
 
 
 ```sql
@@ -205,17 +183,8 @@ FROM emp;
 **Question 7**
 ---
 Write a SQL query to find all employees who were hired in the year 2022 from emp table.
+![image](https://github.com/user-attachments/assets/948eb8b7-c0d8-41cb-bac4-f6501939736c)
 
-cid         name        type        
-----------  ----------  ---------- 
-0           empno       INT         
-1           ename       VARCHAR(100)
-2           job         VARCHAR(50)
-3           mgr         INT        
-4           hiredate    DATE        
-5           sal         DECIMAL(10,2)  
-6           comm        DECIMAL(10,2)  
-7           deptno      INT         
 For example:
 
 ![image](https://github.com/user-attachments/assets/d9a30324-7b27-4678-8c45-afbfa62beee9)
@@ -237,12 +206,9 @@ WHERE strftime('%Y', hiredate) = '2022';
 Write a SQL query to retrieve the details of all customers whose ID belongs to any of the values 3007, 3008 or 3009. Return customer_id, cust_name, city, grade, and salesman_id.
 
 Sample table: customer
+![image](https://github.com/user-attachments/assets/459bcf6b-2a02-4a09-ae98-bf6ef3bdd82f)
 
- customer_id |   cust_name    |    city    | grade | salesman_id 
--------------+----------------+------------+-------+-------------
-        3002 | Nick Rimando   | New York   |   100 |        5001
-        3007 | Brad Davis     | New York   |   200 |        5001
-        3005 | Graham Zusi    | California |   200 |        5002
+
 For example:
 
 ![image](https://github.com/user-attachments/assets/9bf49b7f-baad-4344-b898-5bca7437086d)
@@ -265,14 +231,8 @@ WHERE customer_id IN (3007, 3008, 3009);
 Write a SQL query to Delete customers from 'customer' table where 'GRADE' is less than 2.
 
  
-Sample table: Customer
 
-+-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+------------+  
-|CUST_CODE  | CUST_NAME   | CUST_CITY   | WORKING_AREA | CUST_COUNTRY | GRADE | OPENING_AMT | RECEIVE_AMT | PAYMENT_AMT |OUTSTANDING_AMT| PHONE_NO     | AGENT_CODE |
-+-----------+-------------+-------------+--------------+--------------+-------+-------------+-------------+-------------+---------------+--------------+------------+
-| C00013    | Holmes      | London      | London       | UK           |     2 |     6000.00 |     5000.00 |     7000.00 |       4000.00 | BBBBBBB      | A003       |
-| C00001    | Micheal     | New York    | New York     | USA          |     2 |     3000.00 |     5000.00 |     2000.00 |       6000.00 | CCCCCCC      | A008       |
-| C00020    | Albert      | New York    | New York     | USA          |     3 |     5000.00 |     7000.00 |     6000.00 |       6000.00 | BBBBSBB      | A008       |
+![image](https://github.com/user-attachments/assets/0f84f1ce-55c9-4c07-a9bc-a24fc68834c5)
 
 ![image](https://github.com/user-attachments/assets/70b5d962-342c-492c-8bd4-083e953e3339)
 
@@ -291,26 +251,15 @@ WHERE GRADE < 2;
 **Question 10**
 ---
 Write a SQL statement to Double the salary for employees in department 20 who have a job_id ending with 'MAN'
-
-
 Employees table
+![image](https://github.com/user-attachments/assets/afcc8253-fb5e-4a5d-ac41-97a65e4e0102)
 
----------------
-employee_id
-first_name
-last_name
-email
-phone_number
-hire_date
-job_id
-salary
-commission_pct
-manager_id
-department_id 
 
 ```sql
-
-![image](https://github.com/user-attachments/assets/3e9dbaad-9bb9-483e-920e-3b2867a906a4)
+UPDATE Employees
+SET salary = salary * 2
+WHERE department_id = 20
+  AND job_id LIKE '%MAN';
 
 ```
 
