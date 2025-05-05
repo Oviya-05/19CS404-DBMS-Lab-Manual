@@ -190,6 +190,7 @@ Create a table named Customers with the following columns:
 - Name as TEXT
 - Email as TEXT
 - JoinDate as DATETIME
+  
 ![image](https://github.com/user-attachments/assets/ec14a0b3-3b4b-4e26-9087-06ed1704d3ce)
 
 ```sql
@@ -208,7 +209,7 @@ CREATE TABLE Customers (
 
 
 **Question 5**
----Insert a student with RollNo 201, Name David Lee, Gender M, Subject Physics, and MARKS 92 into the Student_details table.
+Insert a student with RollNo 201, Name David Lee, Gender M, Subject Physics, and MARKS 92 into the Student_details table.
 ![image](https://github.com/user-attachments/assets/ab399473-0cf0-4ace-86fb-3e914335849a)
 
 ```sql
