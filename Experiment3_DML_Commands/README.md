@@ -88,6 +88,7 @@ Write a SQL query to Delete customers from 'customer' table where 'WORKING_AREA'
 
 
 ```sql
+
 DELETE FROM customer
 WHERE WORKING_AREA = 'New York';
 
