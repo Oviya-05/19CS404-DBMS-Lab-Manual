@@ -111,10 +111,10 @@ CREATE TABLE Table_Name (
 - Amount as REAL should be greater than 0.
 - DueDate as DATE should be greater than the InvoiceDate.
 - OrderID as INTEGER should be a foreign key referencing Orders(OrderID).
-![image](https://github.com/user-attachments/assets/0b73445f-6e62-47fc-a04e-1d2afc5ef2b6)
+![image](https://github.com/user-attachments/assets/169dfaa9-45e5-425a-b13c-1b2efab23c52)
 
 ```sql
-CREATE TABLE Invoices (
+-- CREATE TABLE Invoices (
     InvoiceID   INTEGER PRIMARY KEY,
     InvoiceDate DATE NOT NULL,
     Amount      REAL NOT NULL CHECK (Amount > 0),
@@ -128,115 +128,201 @@ CREATE TABLE Invoices (
 
 **Output:**
 
-![Output1](output.png)
+![image](https://github.com/user-attachments/assets/9e5fe6b3-14e6-4f52-a0db-e3b72f1e01ad)
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+-- Create a table named Employees with the following constraints:
+
+- EmployeeID should be the primary key.
+- FirstName and LastName should be NOT NULL.
+- Email should be unique.
+- Salary should be greater than 0.
+- DepartmentID should be a foreign key referencing the Departments table.
+
+  ![image](https://github.com/user-attachments/assets/47060038-14e9-45b2-877e-e81dc84f00e8)
+
 
 ```sql
--- Paste your SQL code below for Question 2
+-- CREATE TABLE Employees (
+    EmployeeID   INTEGER PRIMARY KEY,
+    FirstName    TEXT NOT NULL,
+    LastName     TEXT NOT NULL,
+    Email        TEXT UNIQUE NOT NULL,
+    Salary       REAL NOT NULL CHECK (Salary > 0),
+    DepartmentID INTEGER NOT NULL,
+    FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)
+);
+
 ```
 
 **Output:**
 
-![Output2](output.png)
+![image](https://github.com/user-attachments/assets/78d06100-05c1-4798-8d8c-130d7fb6a068)
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+-- Insert all employees from Former_employees into Employee
+
+Table attributes are EmployeeID, Name, Department, Salary
+
+![image](https://github.com/user-attachments/assets/4dcc3073-e1a9-44d3-8a64-e6e9d6cd835f)
+
 
 ```sql
--- Paste your SQL code below for Question 3
+-- INSERT INTO Employee (EmployeeID, Name, Department, Salary)
+SELECT EmployeeID, Name, Department, Salary
+FROM Former_employees;
+
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/3b45b211-64d3-423f-81ef-dedafb494bb6)
 
-![Output3](output.png)
 
 **Question 4**
 ---
--- Paste Question 4 here
+-- Create a table named Customers with the following columns:
+
+- CustomerID as INTEGER
+- Name as TEXT
+- Email as TEXT
+- JoinDate as DATETIME
+![image](https://github.com/user-attachments/assets/ec14a0b3-3b4b-4e26-9087-06ed1704d3ce)
 
 ```sql
--- Paste your SQL code below for Question 4
+-- CREATE TABLE Customers (
+    CustomerID INTEGER,
+    Name       TEXT,
+    Email      TEXT,
+    JoinDate   DATETIME
+);
+
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/54cbee44-7f72-45ea-a58c-57f018a7264e)
 
-![Output4](output.png)
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+--Insert a student with RollNo 201, Name David Lee, Gender M, Subject Physics, and MARKS 92 into the Student_details table.
+![image](https://github.com/user-attachments/assets/ab399473-0cf0-4ace-86fb-3e914335849a)
 
 ```sql
--- Paste your SQL code below for Question 5
+-- INSERT INTO Student_details (RollNo, Name, Gender, Subject, MARKS)
+VALUES (201, 'David Lee', 'M', 'Physics', 92);
+
 ```
 
 **Output:**
+![image](https://github.com/user-attachments/assets/ecb0080c-009d-46a6-9d6b-cceeec8f0edf)
 
-![Output5](output.png)
 
 **Question 6**
 ---
--- Paste Question 6 here
+--Insert a new product with ProductID 101, Name Laptop, Category Electronics, Price 1500, and Stock 50 into the Products table.
+![image](https://github.com/user-attachments/assets/778dd531-1bbd-4aba-ab19-0733057f16cd)
 
 ```sql
--- Paste your SQL code below for Question 6
+-- INSERT INTO Products (ProductID, Name, Category, Price, Stock)
+VALUES (101, 'Laptop', 'Electronics', 1500, 50);
+
 ```
 
 **Output:**
 
-![Output6](output.png)
+![image](https://github.com/user-attachments/assets/d8c02e27-053b-4245-b0c6-b73c13315718)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+-- Write an SQL query to add two new columns, designation and net_salary, to the table Companies. The designation column should have a data type of varchar(50), and the net_salary column should have a data type of number.
+
+![image](https://github.com/user-attachments/assets/e52c1175-8218-4d58-9be5-c3b5f32896fc)
+
 
 ```sql
--- Paste your SQL code below for Question 7
+-- ALTER TABLE Companies ADD COLUMN designation varchar(50);
+ALTER TABLE Companies ADD COLUMN net_salary number;
+
 ```
 
 **Output:**
 
-![Output7](output.png)
+![image](https://github.com/user-attachments/assets/9fa81ae0-8cec-4adb-8ab9-73d811145f3c)
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+-- Create a table named Products with the following constraints:
+- ProductID as INTEGER should be the primary key.
+- ProductName as TEXT should be unique and not NULL.
+- Price as REAL should be greater than 0.
+- StockQuantity as INTEGER should be non-negative.
+
+![image](https://github.com/user-attachments/assets/5cce0853-b56a-4d4f-9ae0-eb8a7402b13f)
 
 ```sql
--- Paste your SQL code below for Question 8
+--CREATE TABLE Products (
+    ProductID      INTEGER PRIMARY KEY,
+    ProductName    TEXT NOT NULL UNIQUE,
+    Price          REAL NOT NULL CHECK (Price > 0),
+    StockQuantity  INTEGER NOT NULL CHECK (StockQuantity >= 0)
+);
+
 ```
 
 **Output:**
 
-![Output8](output.png)
+![image](https://github.com/user-attachments/assets/9f5fca5f-e1ce-44b7-a71f-b4b394593ede)
 
 **Question 9**
 ---
--- Paste Question 9 here
+-- Create a table named Products with the following constraints:
+
+- ProductID should be the primary key.
+- ProductName should be NOT NULL.
+- Price is of real datatype and should be greater than 0.
+- Stock is of integer datatype and should be greater than or equal to 0.
+
+![image](https://github.com/user-attachments/assets/85405fcb-b364-4ddb-8b95-cb2642d854ff)
+
 
 ```sql
--- Paste your SQL code below for Question 9
+-- CREATE TABLE Products (
+    ProductID    INTEGER PRIMARY KEY,
+    ProductName  TEXT NOT NULL,
+    Price        REAL NOT NULL CHECK (Price > 0),
+    Stock        INTEGER NOT NULL CHECK (Stock >= 0)
+);
+
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/eeeca637-aca5-4eb4-a0c4-9c5efad8b158)
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+-- Write a SQL query to Add a new ParentsNumber column  as number and Adhar_Number as Number in the Student_details table.
+
+![image](https://github.com/user-attachments/assets/a61e0b8e-24bc-4c41-a6b4-0310996a9493)
 
 ```sql
--- Paste your SQL code below for Question 10
+-- ALTER TABLE Student_details ADD COLUMN ParentsNumber number;
+ALTER TABLE Student_details ADD COLUMN Adhar_Number number;
+
 ```
 
 **Output:**
 
-![Output10](output.png)
+![image](https://github.com/user-attachments/assets/0bd5cc08-ac6a-4510-8759-ef10b2884dda)
+
 
 
 ## RESULT
