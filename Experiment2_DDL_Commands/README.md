@@ -105,7 +105,7 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Create a table named Invoices with the following constraints:
+Create a table named Invoices with the following constraints:
 - InvoiceID as INTEGER should be the primary key.
 - InvoiceDate as DATE.
 - Amount as REAL should be greater than 0.
@@ -114,7 +114,7 @@ CREATE TABLE Table_Name (
 ![image](https://github.com/user-attachments/assets/169dfaa9-45e5-425a-b13c-1b2efab23c52)
 
 ```sql
--- CREATE TABLE Invoices (
+CREATE TABLE Invoices (
     InvoiceID   INTEGER PRIMARY KEY,
     InvoiceDate DATE NOT NULL,
     Amount      REAL NOT NULL CHECK (Amount > 0),
@@ -133,7 +133,7 @@ CREATE TABLE Table_Name (
 
 **Question 2**
 ---
--- Create a table named Employees with the following constraints:
+Create a table named Employees with the following constraints:
 
 - EmployeeID should be the primary key.
 - FirstName and LastName should be NOT NULL.
@@ -145,7 +145,7 @@ CREATE TABLE Table_Name (
 
 
 ```sql
--- CREATE TABLE Employees (
+CREATE TABLE Employees (
     EmployeeID   INTEGER PRIMARY KEY,
     FirstName    TEXT NOT NULL,
     LastName     TEXT NOT NULL,
@@ -164,7 +164,7 @@ CREATE TABLE Table_Name (
 
 **Question 3**
 ---
--- Insert all employees from Former_employees into Employee
+Insert all employees from Former_employees into Employee
 
 Table attributes are EmployeeID, Name, Department, Salary
 
@@ -172,7 +172,7 @@ Table attributes are EmployeeID, Name, Department, Salary
 
 
 ```sql
--- INSERT INTO Employee (EmployeeID, Name, Department, Salary)
+INSERT INTO Employee (EmployeeID, Name, Department, Salary)
 SELECT EmployeeID, Name, Department, Salary
 FROM Former_employees;
 
@@ -184,7 +184,7 @@ FROM Former_employees;
 
 **Question 4**
 ---
--- Create a table named Customers with the following columns:
+Create a table named Customers with the following columns:
 
 - CustomerID as INTEGER
 - Name as TEXT
@@ -193,7 +193,7 @@ FROM Former_employees;
 ![image](https://github.com/user-attachments/assets/ec14a0b3-3b4b-4e26-9087-06ed1704d3ce)
 
 ```sql
--- CREATE TABLE Customers (
+CREATE TABLE Customers (
     CustomerID INTEGER,
     Name       TEXT,
     Email      TEXT,
@@ -208,12 +208,11 @@ FROM Former_employees;
 
 
 **Question 5**
----
---Insert a student with RollNo 201, Name David Lee, Gender M, Subject Physics, and MARKS 92 into the Student_details table.
+---Insert a student with RollNo 201, Name David Lee, Gender M, Subject Physics, and MARKS 92 into the Student_details table.
 ![image](https://github.com/user-attachments/assets/ab399473-0cf0-4ace-86fb-3e914335849a)
 
 ```sql
--- INSERT INTO Student_details (RollNo, Name, Gender, Subject, MARKS)
+INSERT INTO Student_details (RollNo, Name, Gender, Subject, MARKS)
 VALUES (201, 'David Lee', 'M', 'Physics', 92);
 
 ```
@@ -224,11 +223,11 @@ VALUES (201, 'David Lee', 'M', 'Physics', 92);
 
 **Question 6**
 ---
---Insert a new product with ProductID 101, Name Laptop, Category Electronics, Price 1500, and Stock 50 into the Products table.
+Insert a new product with ProductID 101, Name Laptop, Category Electronics, Price 1500, and Stock 50 into the Products table.
 ![image](https://github.com/user-attachments/assets/778dd531-1bbd-4aba-ab19-0733057f16cd)
 
 ```sql
--- INSERT INTO Products (ProductID, Name, Category, Price, Stock)
+INSERT INTO Products (ProductID, Name, Category, Price, Stock)
 VALUES (101, 'Laptop', 'Electronics', 1500, 50);
 
 ```
@@ -240,13 +239,13 @@ VALUES (101, 'Laptop', 'Electronics', 1500, 50);
 
 **Question 7**
 ---
--- Write an SQL query to add two new columns, designation and net_salary, to the table Companies. The designation column should have a data type of varchar(50), and the net_salary column should have a data type of number.
+Write an SQL query to add two new columns, designation and net_salary, to the table Companies. The designation column should have a data type of varchar(50), and the net_salary column should have a data type of number.
 
 ![image](https://github.com/user-attachments/assets/e52c1175-8218-4d58-9be5-c3b5f32896fc)
 
 
 ```sql
--- ALTER TABLE Companies ADD COLUMN designation varchar(50);
+ALTER TABLE Companies ADD COLUMN designation varchar(50);
 ALTER TABLE Companies ADD COLUMN net_salary number;
 
 ```
@@ -258,7 +257,7 @@ ALTER TABLE Companies ADD COLUMN net_salary number;
 
 **Question 8**
 ---
--- Create a table named Products with the following constraints:
+Create a table named Products with the following constraints:
 - ProductID as INTEGER should be the primary key.
 - ProductName as TEXT should be unique and not NULL.
 - Price as REAL should be greater than 0.
@@ -267,7 +266,7 @@ ALTER TABLE Companies ADD COLUMN net_salary number;
 ![image](https://github.com/user-attachments/assets/5cce0853-b56a-4d4f-9ae0-eb8a7402b13f)
 
 ```sql
---CREATE TABLE Products (
+CREATE TABLE Products (
     ProductID      INTEGER PRIMARY KEY,
     ProductName    TEXT NOT NULL UNIQUE,
     Price          REAL NOT NULL CHECK (Price > 0),
@@ -282,7 +281,7 @@ ALTER TABLE Companies ADD COLUMN net_salary number;
 
 **Question 9**
 ---
--- Create a table named Products with the following constraints:
+Create a table named Products with the following constraints:
 
 - ProductID should be the primary key.
 - ProductName should be NOT NULL.
@@ -293,7 +292,7 @@ ALTER TABLE Companies ADD COLUMN net_salary number;
 
 
 ```sql
--- CREATE TABLE Products (
+CREATE TABLE Products (
     ProductID    INTEGER PRIMARY KEY,
     ProductName  TEXT NOT NULL,
     Price        REAL NOT NULL CHECK (Price > 0),
@@ -309,12 +308,12 @@ ALTER TABLE Companies ADD COLUMN net_salary number;
 
 **Question 10**
 ---
--- Write a SQL query to Add a new ParentsNumber column  as number and Adhar_Number as Number in the Student_details table.
+Write a SQL query to Add a new ParentsNumber column  as number and Adhar_Number as Number in the Student_details table.
 
 ![image](https://github.com/user-attachments/assets/a61e0b8e-24bc-4c41-a6b4-0310996a9493)
 
 ```sql
--- ALTER TABLE Student_details ADD COLUMN ParentsNumber number;
+ALTER TABLE Student_details ADD COLUMN ParentsNumber number;
 ALTER TABLE Student_details ADD COLUMN Adhar_Number number;
 
 ```
