@@ -114,7 +114,7 @@ CREATE TABLE Table_Name (
 ![image](https://github.com/user-attachments/assets/0b73445f-6e62-47fc-a04e-1d2afc5ef2b6)
 
 ```sql
--- CREATE TABLE Invoices (
+CREATE TABLE Invoices (
     InvoiceID   INTEGER PRIMARY KEY,
     InvoiceDate DATE NOT NULL,
     Amount      REAL NOT NULL CHECK (Amount > 0),
