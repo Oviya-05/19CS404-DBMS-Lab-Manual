@@ -105,10 +105,25 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Paste Question 1 here
+-- Create a table named Invoices with the following constraints:
+- InvoiceID as INTEGER should be the primary key.
+- InvoiceDate as DATE.
+- Amount as REAL should be greater than 0.
+- DueDate as DATE should be greater than the InvoiceDate.
+- OrderID as INTEGER should be a foreign key referencing Orders(OrderID).
+![image](https://github.com/user-attachments/assets/0b73445f-6e62-47fc-a04e-1d2afc5ef2b6)
 
 ```sql
--- Paste your SQL code below for Question 1
+-- CREATE TABLE Invoices (
+    InvoiceID   INTEGER PRIMARY KEY,
+    InvoiceDate DATE NOT NULL,
+    Amount      REAL NOT NULL CHECK (Amount > 0),
+    DueDate     DATE NOT NULL,
+    OrderID     INTEGER NOT NULL,
+    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID),
+    CHECK (DueDate > InvoiceDate)
+);
+
 ```
 
 **Output:**
